@@ -1,0 +1,3619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DermaGlow | Skincare Treatments & Professional Services Directory</title>
+<meta name="description" content="DermaGlow is a premier professional directory for advanced skincare treatments, board-certified dermatologists, licensed aesthetic clinics, and bespoke facial care.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+<meta name="theme-color" content="#FAF7F2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+:root {
+    --bg: #FAF7F2;
+    --surface: #FFFFFF;
+    --surface-2: #F4EFEA;
+    --text: #1E2522;
+    --muted: #55635C;
+    --accent: #496956;
+    --accent-light: #5E806D;
+    --blush: #D98A94;
+    --blush-light: #F9EEEC;
+    --border: rgba(73, 105, 86, 0.14);
+    --white: #ffffff;
+    --max: 1240px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Manrope", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(92%, var(--max));
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(250, 247, 242, 0.9);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.logo-mark {
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--accent);
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    transform: rotate(45deg);
+    background: #FFFFFF;
+}
+
+.logo-mark i {
+    transform: rotate(-45deg);
+    width: 17px;
+}
+
+.logo span {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: var(--text);
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: #45524B;
+    transition: all .3s ease;
+    position: relative;
+    padding: 6px 0;
+    font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(73, 105, 86, 0.35);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    border: 0;
+    cursor: pointer;
+    padding: 12px 19px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    transition: .3s;
+    border-radius: 4px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(73, 105, 86, 0.05);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(73, 105, 86, 0.25);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    padding-top: 145px;
+    padding-bottom: 75px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: .35;
+    background-image:
+        linear-gradient(rgba(73, 105, 86, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(73, 105, 86, 0.06) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.hero-glow {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    right: -180px;
+    top: 90px;
+    border-radius: 50%;
+    background: rgba(217, 138, 148, 0.2);
+    filter: blur(85px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-visual {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(73, 105, 86, 0.16);
+    box-shadow: 0 30px 60px -15px rgba(30, 37, 34, 0.1), 0 0 40px rgba(217, 138, 148, 0.15);
+    background: var(--surface);
+    width: 100%;
+    max-width: 480px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.hero-image-wrapper:hover .hero-img {
+    transform: scale(1.03);
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(73, 105, 86, 0.16);
+    padding: 14px 18px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 12px 30px rgba(30, 37, 34, 0.08);
+}
+
+.hero-badge i {
+    color: var(--accent);
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.hero-badge strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.hero-badge span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.hero-card-floating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(217, 138, 148, 0.5);
+    padding: 8px 14px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #B85B66;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 25px rgba(30, 37, 34, 0.08);
+}
+
+.hero-card-floating i {
+    color: var(--blush);
+    width: 14px;
+    height: 14px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--accent);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 27px;
+    font-weight: 600;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(44px, 6.5vw, 92px);
+    font-weight: 500;
+    line-height: .98;
+    letter-spacing: -1.5px;
+    max-width: 980px;
+    color: var(--text);
+}
+
+.hero h1 em {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.hero-description {
+    margin-top: 32px;
+    max-width: 630px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.hero-stats {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.stat {
+    padding: 23px 0;
+    border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+    border-right: 0;
+    padding-left: 25px;
+}
+
+.stat:not(:first-child) {
+    padding-left: 25px;
+}
+
+.stat strong {
+    display: block;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--accent);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* ================= GENERAL ================= */
+
+section {
+    padding: 115px 0;
+    position: relative;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 55px;
+}
+
+.section-head h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--text);
+}
+
+.section-head p {
+    max-width: 440px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.gold {
+    color: var(--accent);
+}
+
+/* ================= NETWORK ================= */
+
+.network {
+    background: #F4EFEA;
+}
+
+.network-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 45px;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 50px -10px rgba(30, 37, 34, 0.12);
+}
+
+.network-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.network-banner:hover .network-banner-img {
+    transform: scale(1.03);
+}
+
+.network-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 34, 30, 0.85) 0%, rgba(26, 34, 30, 0.25) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.network-banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(73, 105, 86, 0.2);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 25px rgba(30, 37, 34, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blush);
+    box-shadow: 0 0 10px var(--blush);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+.network-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.network-item {
+    min-height: 160px;
+    height: 100%;
+    padding: 30px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .35s;
+    background: var(--surface);
+}
+
+.network-item:last-child {
+    border-right: 0;
+}
+
+.network-item:hover {
+    background: #FAF7F2;
+}
+
+.network-icon {
+    color: var(--accent);
+}
+
+.network-item h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.network-item p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 7px;
+    line-height: 1.5;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-section {
+    background: #FAF7F2;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.gallery-card {
+    position: relative;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(30, 37, 34, 0.08);
+    background: var(--surface);
+}
+
+.gallery-card-large {
+    grid-column: span 2;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.06);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 34, 30, 0.92) 0%, rgba(26, 34, 30, 0.3) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 26px;
+    transition: background 0.4s ease;
+}
+
+.gallery-tag {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(217, 138, 148, 0.28);
+    border: 1px solid rgba(217, 138, 148, 0.6);
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(8px);
+}
+
+.gallery-overlay h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.gallery-overlay p {
+    font-size: 13px;
+    color: #EDE7DC;
+    line-height: 1.5;
+}
+
+/* ================= SOLUTIONS ================= */
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.solution-card {
+    min-height: 270px;
+    padding: 32px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: .4s;
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.solution-card::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(217, 138, 148, 0.12);
+    right: -50px;
+    bottom: -50px;
+    transition: .4s;
+}
+
+.solution-card:hover {
+    background: #FAF7F2;
+    transform: translateY(-5px);
+}
+
+.solution-card:hover::after {
+    transform: scale(1.5);
+}
+
+.solution-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.solution-number {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.solution-card i,
+.solution-icon {
+    margin: 0;
+    color: var(--accent);
+    width: 26px;
+    height: 26px;
+}
+
+.solution-card h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.solution-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ================= MATCHMAKING ================= */
+
+.match-section {
+    background: #F4EFEA;
+}
+
+.match-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.match-copy h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--text);
+}
+
+.match-copy p {
+    margin-top: 25px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.match-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 20px 45px rgba(30, 37, 34, 0.06);
+}
+
+.form-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
+}
+
+.form-title h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.live {
+    color: #386B49;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.live::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #4E8A61;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.field label {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    background: #FAF7F2;
+    color: var(--text);
+    outline: none;
+    font-family: inherit;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: border-color .2s, background-color .2s;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--accent);
+    background: #FFFFFF;
+}
+
+.match-btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* ================= CONTRACTS ================= */
+
+.contract-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.contract-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 27px;
+    transition: .35s;
+    border-radius: 6px;
+}
+
+.contract-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(30, 37, 34, 0.08);
+}
+
+.contract-card i {
+    color: var(--accent);
+    margin-bottom: 35px;
+    width: 32px;
+    height: 32px;
+}
+
+.contract-card h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.contract-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.contract-link {
+    margin-top: 25px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(73, 105, 86, 0.3);
+    transition: .3s;
+}
+
+.contract-link:hover {
+    color: var(--accent-light);
+    border-color: var(--accent);
+    gap: 12px;
+}
+
+.contract-link i {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    color: inherit;
+}
+
+#contracts .section-head p,
+#process .section-head p {
+    font-size: 16px;
+    max-width: 480px;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard-section {
+    background: #FAF7F2;
+}
+
+.dashboard {
+    border: 1px solid var(--border);
+    background: #FFFFFF;
+    overflow: hidden;
+    box-shadow: 0 35px 80px rgba(30, 37, 34, 0.08);
+    border-radius: 8px;
+}
+
+.dashboard-top {
+    height: 58px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    background: #FAF7F2;
+}
+
+.dashboard-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dashboard-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #D8D1C7;
+}
+
+.dashboard-user {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.dashboard-body {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    min-height: 490px;
+}
+
+.dashboard-side {
+    border-right: 1px solid var(--border);
+    padding: 20px 12px;
+    min-width: 0;
+    background: #FAF7F2;
+}
+
+.dashboard-main {
+    min-width: 0;
+    background: #FFFFFF;
+}
+
+.side-logo {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    padding: 12px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.side-logo i,
+.side-link i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.side-link {
+    padding: 11px 12px;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: background .2s ease, color .2s ease;
+    border-radius: 4px;
+}
+
+.side-link.active,
+.side-link:hover {
+    background: #FFFFFF;
+    color: var(--accent);
+    box-shadow: 0 2px 8px rgba(30, 37, 34, 0.06);
+}
+
+.dashboard-main {
+    padding: 25px;
+}
+
+.dashboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-heading h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.dashboard-heading span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dash-card {
+    background: #FAF7F2;
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 6px;
+}
+
+.dash-card span {
+    color: var(--muted);
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.dash-card strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    color: var(--accent);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+}
+
+.dashboard-panels {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.panel {
+    border: 1px solid var(--border);
+    background: #FAF7F2;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.panel h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text);
+}
+
+.progress-row {
+    margin-bottom: 17px;
+}
+
+.progress-top {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.progress {
+    height: 4px;
+    background: #E4DDD3;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    width: 72%;
+    background: var(--accent);
+}
+
+.activity {
+    display: flex;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity i {
+    color: var(--accent);
+}
+
+.activity p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+.activity strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* Dashboard: hamburger menu + switchable views */
+
+.dash-menu-btn {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 9px 14px;
+    cursor: pointer;
+    transition: border-color .2s ease, color .2s ease;
+    border-radius: 4px;
+}
+
+.dash-menu-btn:hover,
+.dash-menu-btn:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+}
+
+.dash-burger {
+    position: relative;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+}
+
+.dash-burger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform .3s ease, opacity .2s ease, top .3s ease;
+}
+
+.dash-burger span:nth-child(1) { top: 0; }
+.dash-burger span:nth-child(2) { top: 5px; }
+.dash-burger span:nth-child(3) { top: 10px; }
+
+.dashboard.menu-open .dash-burger span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+.dashboard.menu-open .dash-burger span:nth-child(2) { opacity: 0; }
+.dashboard.menu-open .dash-burger span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+.dash-backdrop {
+    display: none;
+}
+
+.dash-view {
+    display: none;
+}
+
+.dash-view.active {
+    display: block;
+    animation: dashFade .35s ease;
+}
+
+@keyframes dashFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+.dash-view:not(#view-overview) .panel {
+    margin-top: 20px;
+}
+
+.dash-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.dash-row:last-child {
+    border-bottom: 0;
+}
+
+.dash-row-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.dash-row-info strong {
+    display: block;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.dash-row-info span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.dash-row-meta {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.chip {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: 5px 9px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    white-space: nowrap;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.chip.ok { color: #2F6340; border-color: rgba(47, 99, 64, 0.3); background: #EAF3EC; }
+.chip.warn { color: #A34E5A; border-color: rgba(163, 78, 90, 0.3); background: #FDF0F1; }
+.chip.info { color: #38566E; border-color: rgba(56, 86, 110, 0.3); background: #EEF4F9; }
+
+.dash-avatar {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.dash-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dash-projects .panel {
+    margin-top: 0;
+}
+
+.dash-projects .panel h4 {
+    margin-bottom: 6px;
+}
+
+.dash-projects .panel > p {
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+/* ================= PROCESS ================= */
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.process-step {
+    padding: 28px;
+    min-height: 260px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.step-no {
+    display: block;
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 34px;
+}
+
+.process-step i {
+    display: block;
+    color: var(--blush);
+    width: 34px;
+    height: 34px;
+    margin: 0 0 22px;
+}
+
+.process-step h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.process-step p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+    margin-top: 8px;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.category {
+    padding: 14px 19px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 11px;
+    transition: .3s;
+    background: var(--surface);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.category:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: #FAF7F2;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+    padding: 125px 0;
+    background:
+        radial-gradient(circle at center, rgba(217, 138, 148, 0.18), transparent 55%),
+        #F4EFEA;
+    text-align: center;
+}
+
+.cta h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(45px, 7vw, 85px);
+    font-weight: 500;
+    line-height: 1.05;
+    max-width: 900px;
+    margin: auto;
+    color: var(--text);
+}
+
+.cta p {
+    color: var(--muted);
+    max-width: 570px;
+    margin: 25px auto 32px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 55px 0 25px;
+    background: #FAF7F2;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 50px;
+}
+
+.footer-brand p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 20px;
+    max-width: 280px;
+}
+
+.footer-col h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.footer-col a {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 11px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.footer-col a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    margin-top: 45px;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    color: #7B857F;
+    font-size: 11px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.footer-col .social-links a,
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    background: var(--surface);
+    transition: .3s;
+}
+
+.social-links a svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(73, 105, 86, 0.25);
+}
+
+/* ================= BACK TO TOP ================= */
+
+.back-to-top {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(73, 105, 86, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity .35s ease, transform .35s ease, visibility .35s, background .3s, color .3s;
+    box-shadow: 0 10px 25px rgba(30, 37, 34, 0.12);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-4px);
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 37, 34, 0.6);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: min(500px, 100%);
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    padding: 35px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(30, 37, 34, 0.18);
+}
+
+.modal-close {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    border: 0;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.modal-box h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.modal-box p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 12px 0 25px;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.float {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+.mobile-nav-buttons {
+    display: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 1180px) {
+
+    .nav-links {
+        position: fixed;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: #FAF7F2;
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 5%;
+        box-shadow: 0 10px 30px rgba(30, 37, 34, 0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a.active {
+        padding-left: 12px;
+        border-left: 2px solid var(--accent);
+        color: var(--accent) !important;
+    }
+
+    .nav-links a.active::after {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    /* Hide Sign In and Request Demo in top header navbar on responsive screens */
+    .nav-actions .btn-outline,
+    .nav-actions .btn-primary {
+        display: none !important;
+    }
+
+    /* Display Sign In & Request Demo inside hamburger menu dropdown */
+    .mobile-nav-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        margin-top: 22px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+    }
+
+    .mobile-nav-buttons .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-image-wrapper {
+        max-width: 100%;
+    }
+
+    .hero-img {
+        height: 380px;
+    }
+
+    .network-strip {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+    }
+
+    .network-item {
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        height: 100%;
+        min-height: 150px;
+    }
+
+    .network-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-card-large {
+        grid-column: span 2;
+    }
+
+    .solutions-grid,
+    .contract-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .match-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    .nav-actions .btn-outline,
+    .nav-actions .btn-primary {
+        display: none !important;
+    }
+
+    .hero-img {
+        height: 500px;
+    }
+
+    .network-banner {
+        height: 300px;
+        margin-bottom: 35px;
+    }
+
+    .network-strip {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+    }
+
+    .network-item {
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        height: 100%;
+        min-height: 150px;
+    }
+
+    .network-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    /* Dashboard: hamburger menu opens side menu drawer on tablet & mobile */
+    .dashboard {
+        position: relative;
+    }
+
+    .dash-menu-btn {
+        display: inline-flex;
+    }
+
+    .dashboard-dots {
+        display: none;
+    }
+
+    .dashboard-body {
+        grid-template-columns: 1fr;
+        min-height: 430px;
+    }
+
+    .dashboard-side {
+        position: absolute;
+        top: 58px;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        max-width: 82%;
+        background: #FAF7F2;
+        z-index: 30;
+        overflow-y: auto;
+        padding: 20px 12px;
+        transform: translateX(-102%);
+        visibility: hidden;
+        transition: transform .3s ease, visibility 0s linear .3s;
+        box-shadow: 10px 0 30px rgba(30, 37, 34, 0.15);
+    }
+
+    .dashboard.menu-open .dashboard-side {
+        transform: none;
+        visibility: visible;
+        transition: transform .3s ease, visibility 0s;
+    }
+
+    .dash-backdrop {
+        display: block;
+        position: absolute;
+        top: 58px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(30, 37, 34, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+        z-index: 25;
+    }
+
+    .dashboard.menu-open .dash-backdrop {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .dashboard-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .side-link {
+        font-size: 13px;
+        padding: 14px 12px;
+    }
+}
+
+@media(max-width: 650px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat {
+        border-bottom: 1px solid var(--border);
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .network-strip,
+    .solutions-grid,
+    .contract-grid,
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .gallery-card,
+    .gallery-card-large {
+        grid-column: span 1 !important;
+        height: 290px;
+    }
+
+    .gallery-overlay {
+        padding: 20px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 20px;
+    }
+
+    .gallery-overlay p {
+        font-size: 12px;
+    }
+
+    .network-item {
+        border-right: 0;
+    }
+
+    .solutions-grid {
+        border-right: 1px solid var(--border);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Dashboard: side menu is a hamburger drawer on mobile */
+    .dashboard-body {
+        min-height: 400px;
+    }
+
+    .dashboard-top {
+        padding: 0 14px;
+    }
+
+    .side-link i {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dash-row {
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main {
+        padding: 16px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-user {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 70%;
+    }
+
+    .contract-card h3 {
+        font-size: 20px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media(max-width: 368px) {
+    .navbar {
+        height: 64px;
+    }
+
+    .logo span {
+        font-size: 13px;
+    }
+
+    .logo-mark {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-img {
+        height: 400px;
+    }
+
+    .network-banner {
+        height: 240px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .gallery-card,
+    .gallery-card-large {
+        grid-column: span 1 !important;
+        height: 260px;
+    }
+
+    .gallery-overlay {
+        padding: 16px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 18px;
+    }
+
+    .gallery-overlay p {
+        font-size: 11px;
+    }
+
+    .mobile-nav-buttons .btn {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .dashboard-side {
+        width: 230px;
+    }
+
+    .dash-menu-btn {
+        padding: 8px 11px;
+    }
+
+    .dashboard-main {
+        padding: 12px;
+    }
+
+    .dash-card {
+        padding: 12px;
+    }
+
+    .dash-card strong {
+        font-size: 20px;
+    }
+
+    .dashboard-heading h3 {
+        font-size: 17px;
+    }
+
+    .process-step {
+        padding: 24px;
+        min-height: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            <div class="logo-mark">
+                <i data-lucide="sparkles"></i>
+            </div>
+            <span>DERMAGLOW</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#network">Specialists</a>
+            <a href="#gallery">Treatments</a>
+            <a href="#solutions">Services</a>
+            <a href="#match">Find Match</a>
+            <a href="#contracts">Care Plans</a>
+            <a href="#process">How It Works</a>
+            <div class="mobile-nav-buttons">
+                <button class="btn btn-outline" onclick="openModal('login'); toggleMenu();">
+                    Sign In
+                </button>
+                <button class="btn btn-primary" onclick="openModal('demo'); toggleMenu();">
+                    Book Treatment
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="btn btn-outline" onclick="openModal('login')">
+                Sign In
+            </button>
+
+            <button class="btn btn-primary" onclick="openModal('demo')">
+                Book Treatment
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+
+    <div class="container">
+
+        <div class="hero-layout">
+
+            <div class="hero-content reveal">
+
+                <div class="eyebrow">
+                    Skincare Treatments & Aesthetic Directory
+                </div>
+
+                <h1>
+                    Discover.
+                    <em>Rejuvenate.</em>
+                    Glow With Confidence.
+                </h1>
+
+                <p class="hero-description">
+                    The premier professional services directory connecting clients with
+                    verified skincare specialists, board-certified dermatologists, and
+                    clinical aesthetic spas for personalized facial treatments, acne care,
+                    and advanced skin rejuvenation.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="btn btn-primary" onclick="scrollToMatch()">
+                        Find Skincare Specialists
+                        <i data-lucide="arrow-up-right" style="width:14px;vertical-align:middle;"></i>
+                    </button>
+
+                    <button class="btn btn-outline" onclick="openModal('demo')">
+                        Explore Directory
+                    </button>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <strong>3.4K+</strong>
+                        <span>Verified Specialists</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>850+</strong>
+                        <span>Accredited Clinics</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>120+</strong>
+                        <span>Clinical Treatments</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>99%</strong>
+                        <span>Client Satisfaction</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="hero-image-wrapper">
+                    <img src="images/hero-skincare.jpg" alt="Professional Skincare Specialist Performing Facial Treatment" class="hero-img">
+                    
+                    <div class="hero-card-floating">
+                        <i data-lucide="sparkles"></i>
+                        <span>+98% RADIANCE SCORE</span>
+                    </div>
+
+                    <div class="hero-badge">
+                        <i data-lucide="shield-check"></i>
+                        <div>
+                            <strong>Verified Skincare Directory</strong>
+                            <span>Board-Certified Dermatologists & Licensed Aestheticians</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= NETWORK ================= -->
+
+<section class="network" id="network">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+    <div>
+        <div class="eyebrow">Accredited Provider Directory</div>
+
+        <h2>
+            Professional Skincare<br>
+            <span class="gold">Specialist Network.</span>
+        </h2>
+    </div>
+
+    <p>
+        Connect with top-tier aesthetic dermatologists, medical spa
+        clinicians, and licensed facial therapists dedicated to
+        evidence-based skin wellness and advanced rejuvenation.
+    </p>
+
+</div>
+
+<div class="network-banner reveal">
+    <img src="images/clinic-sanctuary.jpg" alt="Aesthetic Dermatology Clinic & Treatment Suite" class="network-banner-img">
+    <div class="network-banner-overlay">
+        <div class="network-banner-badge">
+            <span class="pulse-dot"></span> 3,400+ Verified Dermatologists & Skincare Clinics Connected
+        </div>
+    </div>
+</div>
+
+<div class="network-strip reveal">
+
+    <div class="network-item">
+        <i class="network-icon" data-lucide="sparkles"></i>
+        <div>
+            <h3>Dermatology Clinics</h3>
+            <p>Medical diagnostics & clinical skin health.</p>
+        </div>
+    </div>
+
+    <div class="network-item">
+        <i class="network-icon" data-lucide="user-check"></i>
+        <div>
+            <h3>Licensed Aestheticians</h3>
+            <p>Customized facials & restorative peels.</p>
+        </div>
+    </div>
+
+    <div class="network-item">
+        <i class="network-icon" data-lucide="heart-pulse"></i>
+        <div>
+            <h3>Acne Specialists</h3>
+            <p>Targeted clearing & barrier rehabilitation.</p>
+        </div>
+    </div>
+
+    <div class="network-item">
+        <i class="network-icon" data-lucide="award"></i>
+        <div>
+            <h3>Anti-Aging Experts</h3>
+            <p>Collagen induction & peptide therapies.</p>
+        </div>
+    </div>
+
+    <div class="network-item">
+        <i class="network-icon" data-lucide="droplet"></i>
+        <div>
+            <h3>HydraFacial Studios</h3>
+            <p>Deep vortex cleansing & hydration.</p>
+        </div>
+    </div>
+
+    <div class="network-item">
+        <i class="network-icon" data-lucide="shield"></i>
+        <div>
+            <h3>MedSpa Practices</h3>
+            <p>Comprehensive medical aesthetics & laser.</p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery-section" id="gallery">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+    <div>
+        <div class="eyebrow">Treatment Showcase</div>
+
+        <h2>
+            Signature Clinical<br>
+            <span class="gold">Treatment Gallery.</span>
+        </h2>
+    </div>
+
+    <p>
+        Explore signature clinical treatments and aesthetic procedures performed
+        by accredited specialists, ranging from deep hydration facials to medical-grade skin renewal.
+    </p>
+
+</div>
+
+<div class="gallery-grid reveal">
+
+    <div class="gallery-card gallery-card-large">
+        <img src="images/facial-treatment.jpg" alt="Hydra-Oxygenating Facial Rejuvenation Therapy" class="gallery-img">
+        <div class="gallery-overlay">
+            <span class="gallery-tag">Facial Rejuvenation</span>
+            <h3>Hydra-Oxygenating Rejuvenation Therapy</h3>
+            <p>Multi-step clinical facial combining gentle vortex exfoliation, vacuum extraction, and antioxidant hydration infusions.</p>
+        </div>
+    </div>
+
+    <div class="gallery-card">
+        <img src="images/dermatologist-consult.jpg" alt="Digital Skin Diagnostic Health Analysis" class="gallery-img">
+        <div class="gallery-overlay">
+            <span class="gallery-tag">Clinical Consultation</span>
+            <h3>Digital Skin Diagnostic Mapping</h3>
+            <p>High-resolution dermatological analysis evaluating pore health, moisture balance, and pigmentation depth.</p>
+        </div>
+    </div>
+
+    <div class="gallery-card">
+        <img src="images/treatment-suite.jpg" alt="State-of-the-art Medical Aesthetic Spa Suite" class="gallery-img">
+        <div class="gallery-overlay">
+            <span class="gallery-tag">Medical Spa Suites</span>
+            <h3>Advanced Laser & Treatment Environments</h3>
+            <p>State-of-the-art sterile clinical suites engineered for safe, comfortable aesthetic procedures.</p>
+        </div>
+    </div>
+
+    <div class="gallery-card gallery-card-large">
+        <img src="images/skincare-products.jpg" alt="Targeted Botanical and Chemical Peel Formulas" class="gallery-img">
+        <div class="gallery-overlay">
+            <span class="gallery-tag">Acne & Peel Care</span>
+            <h3>Targeted Botanical & Chemical Peels</h3>
+            <p>Dermatologist-formulated enzyme and acid complexes that accelerate cellular renewal and restore skin clarity.</p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SOLUTIONS ================= -->
+
+<section id="solutions">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+    <div>
+        <div class="eyebrow">Directory Services</div>
+
+        <h2>
+            Designed around<br>
+            <span class="gold">radiant health.</span>
+        </h2>
+    </div>
+
+    <p>
+        From specialist discovery and tailored skin matchmaking to structured care packages
+        and direct consultation booking, manage your skincare journey seamlessly.
+    </p>
+
+</div>
+
+<div class="solutions-grid reveal">
+
+    <div class="solution-card">
+        <div class="solution-header">
+            <span class="solution-number">01</span>
+            <i data-lucide="search" class="solution-icon"></i>
+        </div>
+        <h3>Specialist Discovery</h3>
+        <p>
+            Search accredited dermatologists, medical aesthetic clinics,
+            and certified facialists filtered by treatment specialty and location.
+        </p>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-header">
+            <span class="solution-number">02</span>
+            <i data-lucide="sparkles" class="solution-icon"></i>
+        </div>
+        <h3>Skin Matchmaking</h3>
+        <p>
+            Intelligent matching connecting your specific skin concerns—acne,
+            hyperpigmentation, or aging—with vetted specialists.
+        </p>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-header">
+            <span class="solution-number">03</span>
+            <i data-lucide="file-signature" class="solution-icon"></i>
+        </div>
+        <h3>Treatment Protocols</h3>
+        <p>
+            Access structured treatment plans, preparation guides, and
+            multi-session aesthetic agreements with complete pricing clarity.
+        </p>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-header">
+            <span class="solution-number">04</span>
+            <i data-lucide="users" class="solution-icon"></i>
+        </div>
+        <h3>Practitioner Credentialing</h3>
+        <p>
+            Review board certifications, clinical training history, verified
+            patient reviews, and clinic hygiene accreditations.
+        </p>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-header">
+            <span class="solution-number">05</span>
+            <i data-lucide="briefcase" class="solution-icon"></i>
+        </div>
+        <h3>Clinic Portal</h3>
+        <p>
+            Centralize consultation requests, skin assessment history,
+            follow-up appointments, and post-procedure progress.
+        </p>
+    </div>
+
+    <div class="solution-card">
+        <div class="solution-header">
+            <span class="solution-number">06</span>
+            <i data-lucide="bar-chart-3" class="solution-icon"></i>
+        </div>
+        <h3>Clinical Outcomes</h3>
+        <p>
+            Evaluate documented treatment results, recovery milestones,
+            and before-and-after case evaluations from real patients.
+        </p>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MATCHMAKING ================= -->
+
+<section class="match-section" id="match">
+
+<div class="container">
+
+<div class="match-layout">
+
+<div class="match-copy reveal">
+
+    <div class="eyebrow">Personalized Skin Match</div>
+
+    <h2>
+        Find your ideal<br>
+        <span class="gold">skincare specialist.</span>
+    </h2>
+
+    <p>
+        Specify your skin condition, preferred treatment approach,
+        and location to connect with licensed dermatologists and medical
+        spas tailored to your skin.
+    </p>
+
+    <br>
+
+    <p>
+        Our structured directory matching evaluates clinical expertise
+        and patient reviews before presenting personalized provider recommendations.
+    </p>
+
+</div>
+
+<div class="match-form reveal">
+
+    <div class="form-title">
+        <h3>Match Your Treatment</h3>
+        <span class="live">Live Directory</span>
+    </div>
+
+    <div class="form-row">
+
+        <div class="field">
+            <label>Treatment Category</label>
+            <select id="businessType">
+                <option>Facial Treatments</option>
+                <option>Acne & Clarifying Care</option>
+                <option>Anti-Aging & Rejuvenation</option>
+                <option>Chemical Peels & Resurfacing</option>
+                <option>Laser & Light Therapy</option>
+                <option>MedSpa Services</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Specialist Type</label>
+            <select>
+                <option>Board-Certified Dermatologist</option>
+                <option>Licensed Medical Aesthetician</option>
+                <option>Clinical Facialist</option>
+                <option>Cosmetic Dermatology Clinic</option>
+                <option>Accredited MedSpa</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="field">
+            <label>Primary Skin Concern</label>
+            <select>
+                <option>Acne & Congestion</option>
+                <option>Fine Lines & Elasticity</option>
+                <option>Hyperpigmentation & Melasma</option>
+                <option>Dehydration & Dullness</option>
+                <option>Rosacea & Sensitive Skin</option>
+                <option>Uneven Texture & Scars</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Region / Clinic Location</label>
+            <select>
+                <option>Metropolitan Dermatology Centers</option>
+                <option>West Coast Aesthetic Clinics</option>
+                <option>East Coast Medical Spas</option>
+                <option>European Wellness Hubs</option>
+                <option>Virtual Tele-Dermatology</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="field">
+        <label>Describe Your Skin Goal</label>
+        <input
+            type="text"
+            id="requirement"
+            placeholder="e.g. Seeking gentle chemical peel and barrier repair for hormonal acne">
+    </div>
+
+    <button class="btn btn-primary match-btn" onclick="findMatch()">
+        Request Specialist Match
+        <i data-lucide="arrow-right" style="width:14px;vertical-align:middle;"></i>
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTRACTS ================= -->
+
+<section id="contracts">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+    <div class="eyebrow">Care Protocols & Packages</div>
+
+    <h2>
+        Treatment plans,<br>
+        <span class="gold">simplified.</span>
+    </h2>
+</div>
+
+<p>
+    Explore transparent, structured treatment packages and professional
+    care agreements designed around clinical skincare protocols.
+</p>
+
+</div>
+
+<div class="contract-grid reveal">
+
+<div class="contract-card">
+    <i data-lucide="file-text"></i>
+    <h3>Clinical Facial Protocol</h3>
+    <p>
+        Define multi-session facial procedures, active serums,
+        application steps, and aftercare commitments.
+    </p>
+    <a href="#" class="contract-link" onclick="openContract(event,'Clinical Facial Protocol')">
+        View Protocol
+        <i data-lucide="arrow-up-right"></i>
+    </a>
+</div>
+
+<div class="contract-card">
+    <i data-lucide="file-check-2"></i>
+    <h3>Acne Care Treatment Package</h3>
+    <p>
+        Structured multi-week clearing regimen including gentle
+        extractions, peel stages, and barrier repair.
+    </p>
+    <a href="#" class="contract-link" onclick="openContract(event,'Acne Care Treatment Package')">
+        View Package
+        <i data-lucide="arrow-up-right"></i>
+    </a>
+</div>
+
+<div class="contract-card">
+    <i data-lucide="sparkles"></i>
+    <h3>Skin Rejuvenation Plan</h3>
+    <p>
+        Establish collagen-induction timelines, frequency of treatment,
+        and maintenance milestones.
+    </p>
+    <a href="#" class="contract-link" onclick="openContract(event,'Skin Rejuvenation Plan')">
+        View Plan
+        <i data-lucide="arrow-up-right"></i>
+    </a>
+</div>
+
+<div class="contract-card">
+    <i data-lucide="shield-check"></i>
+    <h3>Client Consent & Care Agreement</h3>
+    <p>
+        Comprehensive consultation disclosure, skin health history,
+        and pre/post-procedure guidelines.
+    </p>
+    <a href="#" class="contract-link" onclick="openContract(event,'Client Consent & Care Agreement')">
+        View Agreement
+        <i data-lucide="arrow-up-right"></i>
+    </a>
+</div>
+
+<div class="contract-card">
+    <i data-lucide="store"></i>
+    <h3>Maintenance Membership Plan</h3>
+    <p>
+        Monthly aesthetician visits, routine seasonal peels,
+        and ongoing professional skin maintenance.
+    </p>
+    <a href="#" class="contract-link" onclick="openContract(event,'Maintenance Membership Plan')">
+        View Plan
+        <i data-lucide="arrow-up-right"></i>
+    </a>
+</div>
+
+<div class="contract-card">
+    <i data-lucide="pen-line"></i>
+    <h3>Bespoke Aesthetic Plan</h3>
+    <p>
+        Create a tailored multi-modal treatment plan addressing your
+        unique skin goals and lifestyle.
+    </p>
+    <a href="#" class="contract-link" onclick="openContract(event,'Bespoke Aesthetic Plan')">
+        Create Plan
+        <i data-lucide="arrow-up-right"></i>
+    </a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard-section" id="dashboard">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+    <div class="eyebrow">Directory Provider Portal</div>
+
+    <h2>
+        Your clinic & treatments,<br>
+        <span class="gold">one directory workspace.</span>
+    </h2>
+</div>
+
+<p>
+    Give your practice and clients one centralized environment for
+    treatment protocols, consultation bookings, specialist schedules, and patient care plans.
+</p>
+
+</div>
+
+<div class="dashboard reveal">
+
+<div class="dashboard-top">
+
+    <button type="button" class="dash-menu-btn" id="dashMenuBtn" aria-label="Open workspace menu" aria-expanded="false" aria-controls="dashSide">
+        <span class="dash-burger" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Menu</span>
+    </button>
+
+    <div class="dashboard-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="dashboard-user">
+        Clinic Workspace / Glow Aesthetic Dermatology
+    </div>
+
+</div>
+
+<div class="dashboard-body">
+
+<aside class="dashboard-side" id="dashSide">
+
+    <div class="side-logo">
+        <i data-lucide="sparkles"></i>
+        <span class="side-text">DERMAGLOW</span>
+    </div>
+
+    <button type="button" class="side-link active" data-view="overview" data-title="Clinic Overview" title="Overview">
+        <i data-lucide="layout-dashboard"></i>
+        <span class="side-text">Overview</span>
+    </button>
+
+    <button type="button" class="side-link" data-view="partnerships" data-title="Treatments" title="Treatments">
+        <i data-lucide="sparkles"></i>
+        <span class="side-text">Treatments</span>
+    </button>
+
+    <button type="button" class="side-link" data-view="contracts" data-title="Care Plans" title="Care Plans">
+        <i data-lucide="file-text"></i>
+        <span class="side-text">Care Plans</span>
+    </button>
+
+    <button type="button" class="side-link" data-view="team" data-title="Specialists" title="Specialists">
+        <i data-lucide="users"></i>
+        <span class="side-text">Specialists</span>
+    </button>
+
+    <button type="button" class="side-link" data-view="projects" data-title="Clinical Programs" title="Clinical Programs">
+        <i data-lucide="folder"></i>
+        <span class="side-text">Clinical Suites</span>
+    </button>
+
+</aside>
+
+<div class="dash-backdrop" id="dashBackdrop"></div>
+
+<main class="dashboard-main">
+
+    <div class="dashboard-heading">
+        <h3 id="dashTitle">Clinic Overview</h3>
+        <span>October 2026</span>
+    </div>
+
+    <div class="dash-view active" id="view-overview">
+
+    <div class="dashboard-cards">
+
+        <div class="dash-card">
+            <span>Active Treatments</span>
+            <strong>24</strong>
+        </div>
+
+        <div class="dash-card">
+            <span>Care Plans</span>
+            <strong>18</strong>
+        </div>
+
+        <div class="dash-card">
+            <span>Specialists On Duty</span>
+            <strong>12</strong>
+        </div>
+
+        <div class="dash-card">
+            <span>Clinical Programs</span>
+            <strong>09</strong>
+        </div>
+
+    </div>
+
+    <div class="dashboard-panels">
+
+        <div class="panel">
+
+            <h4>Treatment Journey Progress</h4>
+
+            <div class="progress-row">
+                <div class="progress-top">
+                    <span>Consultation & Skin Analysis</span>
+                    <span>88%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:88%"></span>
+                </div>
+            </div>
+
+            <div class="progress-row">
+                <div class="progress-top">
+                    <span>Deep Cleansing & Prep</span>
+                    <span>74%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:74%"></span>
+                </div>
+            </div>
+
+            <div class="progress-row">
+                <div class="progress-top">
+                    <span>Active Peels & Therapies</span>
+                    <span>56%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:56%"></span>
+                </div>
+            </div>
+
+            <div class="progress-row">
+                <div class="progress-top">
+                    <span>Barrier Locking & Hydration</span>
+                    <span>38%</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:38%"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <h4>Recent Clinical Activity</h4>
+
+            <div class="activity">
+                <i data-lucide="check-circle-2"></i>
+                <p>
+                    <strong>Treatment plan confirmed</strong><br>
+                    Hydra-Glow Rejuvenation Session
+                </p>
+            </div>
+
+            <div class="activity">
+                <i data-lucide="user-plus"></i>
+                <p>
+                    <strong>New specialist added</strong><br>
+                    Dr. Elena Vance, Board Dermatologist
+                </p>
+            </div>
+
+            <div class="activity">
+                <i data-lucide="sparkles"></i>
+                <p>
+                    <strong>New patient match</strong><br>
+                    Anti-Aging Peptide Therapy
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <!-- Treatments view -->
+    <div class="dash-view" id="view-partnerships">
+        <div class="panel">
+            <h4>Active Treatment Protocols</h4>
+
+            <div class="dash-row">
+                <div class="dash-avatar">HG</div>
+                <div class="dash-row-info"><strong>Hydra-Glow Infusion</strong><span>Deep hydration &amp; vortex antioxidant therapy &middot; Room 1</span></div>
+                <span class="chip ok">Active</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">CP</div>
+                <div class="dash-row-info"><strong>ClearSkin Peel Therapy</strong><span>Salicylic &amp; mandelic acid clearing &middot; Room 3</span></div>
+                <span class="chip warn">In Progress</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">CI</div>
+                <div class="dash-row-info"><strong>Collagen Induction Session</strong><span>Microneedling with growth factors &middot; Room 2</span></div>
+                <span class="chip info">Scheduled</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">BR</div>
+                <div class="dash-row-info"><strong>Gentle Barrier Restore</strong><span>Centella &amp; ceramide calming complex &middot; Room 4</span></div>
+                <span class="chip ok">Active</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">LP</div>
+                <div class="dash-row-info"><strong>LED Phototherapy Session</strong><span>Anti-inflammatory red &amp; blue light &middot; Room 5</span></div>
+                <span class="chip ok">Completed</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Care Plans view -->
+    <div class="dash-view" id="view-contracts">
+        <div class="panel">
+            <h4>Care Plan Register</h4>
+
+            <div class="dash-row">
+                <div class="dash-row-info"><strong>Full Skin Rejuvenation Protocol</strong><span>Dr. Elena Vance &middot; 6-session series</span></div>
+                <span class="dash-row-meta">$1,250</span>
+                <span class="chip ok">Signed</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-row-info"><strong>Acne Clarity 12-Week Package</strong><span>ClearSkin Specialists &middot; Bi-weekly</span></div>
+                <span class="dash-row-meta">$820</span>
+                <span class="chip warn">In Review</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-row-info"><strong>Pre-Treatment Health Consent</strong><span>Glow Aesthetic Centre</span></div>
+                <span class="dash-row-meta">&mdash;</span>
+                <span class="chip ok">Signed</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-row-info"><strong>Maintenance Membership Agreement</strong><span>Radiance MedSpa &middot; Renews quarterly</span></div>
+                <span class="dash-row-meta">$480</span>
+                <span class="chip ok">Active</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialists view -->
+    <div class="dash-view" id="view-team">
+        <div class="panel">
+            <h4>Specialist Practitioners &middot; 12 on duty</h4>
+
+            <div class="dash-row">
+                <div class="dash-avatar">EV</div>
+                <div class="dash-row-info"><strong>Dr. Elena Vance, MD</strong><span>Lead Dermatologist &amp; Medical Director</span></div>
+                <span class="chip ok">Lead MD</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">SL</div>
+                <div class="dash-row-info"><strong>Sophia Lin, LME</strong><span>Senior Medical Aesthetician</span></div>
+                <span class="chip info">Specialist</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">MR</div>
+                <div class="dash-row-info"><strong>Dr. Marcus Reed</strong><span>Laser Specialist &amp; Cosmetic Surgeon</span></div>
+                <span class="chip info">Specialist</span>
+            </div>
+            <div class="dash-row">
+                <div class="dash-avatar">AC</div>
+                <div class="dash-row-info"><strong>Amara Chen</strong><span>Clinical Facialist &amp; Skin Nutritionist</span></div>
+                <span class="chip">Practitioner</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinical Programs view -->
+    <div class="dash-view" id="view-projects">
+        <div class="dash-projects">
+            <div class="panel">
+                <h4>Acne Barrier Rehabilitation</h4>
+                <p>ClearSkin Specialists &middot; 8-week cycle</p>
+                <div class="progress-row">
+                    <div class="progress-top"><span>Progress</span><span>75%</span></div>
+                    <div class="progress"><span style="width:75%"></span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <h4>Radiant Glow Skin Renewal</h4>
+                <p>HydraFacial Suite &middot; 4 sessions</p>
+                <div class="progress-row">
+                    <div class="progress-top"><span>Progress</span><span>52%</span></div>
+                    <div class="progress"><span style="width:52%"></span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <h4>Deep Moisture Hydration Series</h4>
+                <p>Wellness Suite B &middot; 6 sessions</p>
+                <div class="progress-row">
+                    <div class="progress-top"><span>Progress</span><span>35%</span></div>
+                    <div class="progress"><span style="width:35%"></span></div>
+                </div>
+            </div>
+            <div class="panel">
+                <h4>Pigmentation Balance Protocol</h4>
+                <p>Laser Suite C &middot; 5 sessions</p>
+                <div class="progress-row">
+                    <div class="progress-top"><span>Progress</span><span>88%</span></div>
+                    <div class="progress"><span style="width:88%"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROCESS ================= -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+    <div class="eyebrow">Simple 5-Step Journey</div>
+
+    <h2>
+        From consultation to<br>
+        <span class="gold">radiant skin.</span>
+    </h2>
+</div>
+
+<p>
+    A structured workflow designed to make finding certified skincare
+    specialists and personalized treatments seamless.
+</p>
+
+</div>
+
+<div class="process reveal">
+
+<div class="process-step">
+    <span class="step-no">01</span>
+    <i data-lucide="user-plus"></i>
+    <h3>Discover Specialists</h3>
+    <p>Browse accredited dermatologists, aesthetic clinics, and facialists.</p>
+</div>
+
+<div class="process-step">
+    <span class="step-no">02</span>
+    <i data-lucide="target"></i>
+    <h3>Select Skin Concern</h3>
+    <p>Filter treatments for acne, hydration, fine lines, or pigmentation.</p>
+</div>
+
+<div class="process-step">
+    <span class="step-no">03</span>
+    <i data-lucide="search"></i>
+    <h3>Compare Protocols</h3>
+    <p>Review credentials, verified patient reviews, and treatment menus.</p>
+</div>
+
+<div class="process-step">
+    <span class="step-no">04</span>
+    <i data-lucide="file-signature"></i>
+    <h3>Book Consultation</h3>
+    <p>Confirm your personalized care plan and appointment schedule.</p>
+</div>
+
+<div class="process-step">
+    <span class="step-no">05</span>
+    <i data-lucide="sparkles"></i>
+    <h3>Achieve Your Glow</h3>
+    <p>Receive professional clinical care and track healthy skin progress.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="network">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div>
+    <div class="eyebrow">Comprehensive Directory Coverage</div>
+
+    <h2>
+        Across all clinical<br>
+        <span class="gold">skincare categories.</span>
+    </h2>
+</div>
+
+<p>
+    Browse comprehensive directory listings spanning medical dermatology,
+    clinical facials, skin resurfacing, and holistic skin wellness.
+</p>
+
+</div>
+
+<div class="categories reveal">
+
+    <div class="category">HydraFacials</div>
+    <div class="category">Chemical Peels</div>
+    <div class="category">Acne Solutions</div>
+    <div class="category">Laser Resurfacing</div>
+    <div class="category">Microneedling</div>
+    <div class="category">Anti-Aging Therapy</div>
+    <div class="category">Dermatology Consults</div>
+    <div class="category">LED Light Therapy</div>
+    <div class="category">Pigmentation Care</div>
+    <div class="category">Barrier Repair</div>
+    <div class="category">MedSpa Services</div>
+    <div class="category">Bespoke Facials</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<div class="container reveal">
+
+    <div class="eyebrow" style="justify-content:center;">
+        DermaGlow Directory
+    </div>
+
+    <h2>
+        Begin your journey to
+        <span class="gold">healthy, radiant skin.</span>
+    </h2>
+
+    <p>
+        Connect with verified skincare specialists, compare clinical facial
+        treatments, and schedule your dermatology consultation.
+    </p>
+
+    <button class="btn btn-primary" onclick="openModal('demo')">
+        Explore Skincare Specialists
+        <i data-lucide="arrow-up-right" style="width:14px;vertical-align:middle;"></i>
+    </button>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+    <a href="#home" class="logo">
+        <div class="logo-mark">
+            <i data-lucide="sparkles"></i>
+        </div>
+        <span>DERMAGLOW</span>
+    </a>
+
+    <p>
+        DermaGlow Professional Services Directory connecting individuals
+        with board-certified dermatologists, licensed aesthetic clinics,
+        and advanced skincare treatments.
+    </p>
+
+    <div class="social-links">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+    </div>
+
+</div>
+
+<div class="footer-col">
+
+    <h4>Directory</h4>
+
+    <a href="#solutions">Browse Services</a>
+    <a href="#match">Find Specialists</a>
+    <a href="#contracts">Care Protocols</a>
+    <a href="#dashboard">Clinic Workspace</a>
+
+</div>
+
+<div class="footer-col">
+
+    <h4>Treatments</h4>
+
+    <a href="#gallery">Facial Rejuvenation</a>
+    <a href="#gallery">Acne Care & Peels</a>
+    <a href="#gallery">Anti-Aging Therapies</a>
+    <a href="#gallery">Laser & MedSpa</a>
+
+</div>
+
+<div class="footer-col">
+
+    <h4>Resources</h4>
+
+    <a href="#">Skin Health Guide</a>
+    <a href="#">Specialist Credentialing</a>
+    <a href="#">Safety & Hygiene</a>
+    <a href="#">Contact Support</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+    <span>&copy; 2026 DERMAGLOW. All rights reserved.</span>
+
+    <span>
+        Privacy &middot; Terms &middot; Clinical Quality Standards
+    </span>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <i data-lucide="arrow-up"></i>
+</button>
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+    <button class="modal-close" onclick="closeModal()">
+        <i data-lucide="x"></i>
+    </button>
+
+    <div id="modalContent"></div>
+
+</div>
+
+</div>
+
+<script>
+
+/* ================= ICONS ================= */
+
+lucide.createIcons();
+
+/* ================= NAVIGATION ================= */
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+/* ================= ACTIVE SECTION HIGHLIGHT ================= */
+
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+    let currentId = "home";
+    const scrollPos = window.scrollY + 160;
+
+    if (window.scrollY < 100) {
+        currentId = "home";
+    } else {
+        sections.forEach(section => {
+            const top = section.offsetTop - 120;
+            const height = section.offsetHeight;
+            if (scrollPos >= top && scrollPos < top + height) {
+                currentId = section.getAttribute("id");
+            }
+        });
+
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 80) {
+            const lastSection = sections[sections.length - 1];
+            if (lastSection) currentId = lastSection.getAttribute("id");
+        }
+    }
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (currentId && link.getAttribute("href") === `#${currentId}`) {
+            link.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveNavLink);
+window.addEventListener("DOMContentLoaded", updateActiveNavLink);
+window.addEventListener("load", updateActiveNavLink);
+updateActiveNavLink();
+
+/* ================= MODALS ================= */
+
+function openModal(type) {
+
+    const modal = document.getElementById("modal");
+    const content = document.getElementById("modalContent");
+
+    if (type === "login") {
+
+        content.innerHTML = `
+            <div class="eyebrow">Client & Specialist Access</div>
+            <h2>Welcome to DermaGlow.</h2>
+            <p>
+                Sign in to access your consultations, treatment plans,
+                and clinic directory workspace.
+            </p>
+
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@domain.com">
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password">
+            </div>
+
+            <button class="btn btn-primary" style="width:100%;margin-top:8px;"
+                onclick="alert('Demo sign in interface - Access Granted')">
+                Sign In to Portal
+            </button>
+
+            <button class="btn btn-outline"
+                style="width:100%;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;"
+                onclick="alert('Google authentication demo')">
+                <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                </svg>
+                <span>Continue with Google</span>
+            </button>
+        `;
+
+    } else {
+
+        content.innerHTML = `
+            <div class="eyebrow">Treatment Consultation</div>
+            <h2>Book Your Skin Consultation.</h2>
+            <p>
+                Tell us about your skincare goals and our specialist directory
+                team will connect you with top accredited clinics.
+            </p>
+
+            <div class="field">
+                <label>Your Name</label>
+                <input type="text" placeholder="Full name">
+            </div>
+
+            <div class="field">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@domain.com">
+            </div>
+
+            <div class="field">
+                <label>Primary Skin Concern & Desired Treatment</label>
+                <input type="text" placeholder="e.g. HydraFacial for dull skin & acne care">
+            </div>
+
+            <button class="btn btn-primary"
+                style="width:100%;margin-top:8px;"
+                onclick="submitDemo()">
+                Request Consultation
+            </button>
+        `;
+    }
+
+    modal.classList.add("active");
+    lucide.createIcons();
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("active");
+}
+
+document.getElementById("modal").addEventListener("click", function(e) {
+    if (e.target === this) closeModal();
+});
+
+/* ================= MATCHMAKING ================= */
+
+function findMatch() {
+
+    const requirement = document.getElementById("requirement").value;
+
+    if (!requirement.trim()) {
+        alert("Please describe your skincare treatment requirement or skin concern.");
+        return;
+    }
+
+    alert(
+        "Your skincare specialist match request has been created.\n\n" +
+        "Our directory will identify accredited practitioners and clinics tailored to your skin goals."
+    );
+}
+
+/* ================= CONTRACT ================= */
+
+function openContract(event, name) {
+
+    event.preventDefault();
+
+    const modal = document.getElementById("modal");
+    const content = document.getElementById("modalContent");
+
+    content.innerHTML = `
+        <div class="eyebrow">Treatment Care Protocol</div>
+
+        <h2>${name}</h2>
+
+        <p>
+            This clinical care protocol establishes structured procedure guidelines,
+            recommended session frequencies, and patient pre/post care commitments.
+        </p>
+
+        <div class="field">
+            <label>Patient / Client Name</label>
+            <input placeholder="Enter full name">
+        </div>
+
+        <div class="field">
+            <label>Selected Clinic / Specialist</label>
+            <input placeholder="Clinic or specialist name">
+        </div>
+
+        <button class="btn btn-primary"
+            style="width:100%;"
+            onclick="alert('Protocol customized and registered for consultation.')">
+            Review Protocol Details
+        </button>
+    `;
+
+    modal.classList.add("active");
+    lucide.createIcons();
+}
+
+/* ================= DEMO ================= */
+
+function submitDemo() {
+
+    alert(
+        "Thank you. Your skincare consultation request has been submitted.\n\n" +
+        "An accredited DermaGlow specialist clinic will contact you shortly."
+    );
+
+    closeModal();
+}
+
+/* ================= SCROLL ================= */
+
+function scrollToMatch() {
+    document.getElementById("match").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+/* ================= SCROLL REVEAL ================= */
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+
+        });
+
+    },
+    {
+        threshold: .12
+    }
+);
+
+document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+});
+
+/* ================= ESCAPE MODAL ================= */
+
+document.addEventListener("keydown", e => {
+
+    if (e.key === "Escape") {
+        closeModal();
+    }
+
+});
+
+/* ================= BACK TO TOP ================= */
+
+const backToTopBtn = document.getElementById("backToTop");
+
+function toggleBackToTop() {
+    backToTopBtn.classList.toggle("show", window.scrollY > 500);
+}
+
+window.addEventListener("scroll", toggleBackToTop, { passive: true });
+toggleBackToTop();
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* ================= DASHBOARD MENU & VIEWS ================= */
+
+(function () {
+
+    const dash = document.querySelector(".dashboard");
+    if (!dash) return;
+
+    const menuBtn = document.getElementById("dashMenuBtn");
+    const backdrop = document.getElementById("dashBackdrop");
+    const title = document.getElementById("dashTitle");
+    const links = dash.querySelectorAll(".side-link[data-view]");
+    const views = dash.querySelectorAll(".dash-view");
+
+    function setMenu(open) {
+        dash.classList.toggle("menu-open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+        menuBtn.setAttribute("aria-label", open ? "Close workspace menu" : "Open workspace menu");
+    }
+
+    menuBtn.addEventListener("click", () => setMenu(!dash.classList.contains("menu-open")));
+    backdrop.addEventListener("click", () => setMenu(false));
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            links.forEach(l => l.classList.toggle("active", l === link));
+            views.forEach(v => v.classList.toggle("active", v.id === "view-" + link.dataset.view));
+            title.textContent = link.dataset.title;
+            setMenu(false);
+        });
+    });
+
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") setMenu(false);
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) setMenu(false);
+    });
+
+})();
+
+</script>
+
+</body>
+</html>
